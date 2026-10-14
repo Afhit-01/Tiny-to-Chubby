@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { RoseBlossom, LavenderSprig } from './FloralDecorations';
+import celebrationPetalsImg from '../assets/images/celebration_petals_1791960507757.jpg';
 
 interface HeroSectionProps {
   onScrollToNext: () => void;
@@ -15,7 +16,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToNext }) => {
       {/* Background artwork with measured contrast scrim */}
       <div className="absolute inset-0 z-0 opacity-20 mix-blend-screen pointer-events-none overflow-hidden">
         <img
-          src="/src/assets/images/celebration_petals_1791960507757.jpg"
+          src={celebrationPetalsImg}
+          onError={(e) => {
+            // Production fallback to public directory
+            const target = e.currentTarget;
+            if (!target.src.includes('/images/celebration_petals.jpg')) {
+              target.src = '/images/celebration_petals.jpg';
+            }
+          }}
           alt="Ethereal purple celebration flowers"
           className="w-full h-full object-cover object-center"
           referrerPolicy="no-referrer"

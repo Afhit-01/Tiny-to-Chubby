@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Sparkles, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { birthdayAudio } from '../utils/audio';
+import floralPurpleRosesImg from '../assets/images/floral_purple_roses_1791960507766.jpg';
+import botanicalDustyRoseImg from '../assets/images/botanical_dusty_rose_1791960508354.jpg';
 
 export const FloralCelebrationSection: React.FC = () => {
   const [activeBloomIndex, setActiveBloomIndex] = useState<number | null>(null);
@@ -59,7 +61,13 @@ export const FloralCelebrationSection: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div className="relative rounded-2xl overflow-hidden border border-[#542B83]/40 bg-[#160a1f] shadow-xl group">
               <img
-                src="/src/assets/images/floral_purple_roses_1791960507766.jpg"
+                src={floralPurpleRosesImg}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes('/images/floral_purple_roses.jpg')) {
+                    target.src = '/images/floral_purple_roses.jpg';
+                  }
+                }}
                 alt="Bespoke royal purple roses bouquet with champagne gold leaves"
                 className="w-full h-[360px] sm:h-[440px] object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"
@@ -88,7 +96,13 @@ export const FloralCelebrationSection: React.FC = () => {
             {/* Companion Artwork */}
             <div className="relative rounded-2xl overflow-hidden border border-[#542B83]/30 bg-[#160a1f] shadow-md group">
               <img
-                src="/src/assets/images/botanical_dusty_rose_1791960508354.jpg"
+                src={botanicalDustyRoseImg}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.src.includes('/images/botanical_dusty_rose.jpg')) {
+                    target.src = '/images/botanical_dusty_rose.jpg';
+                  }
+                }}
                 alt="Dusty rose and lilac mist blossoms arrangement"
                 className="w-full h-44 sm:h-52 object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
                 referrerPolicy="no-referrer"
