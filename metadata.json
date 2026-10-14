@@ -1,0 +1,6 @@
+{
+  "name": "Romdah's 20th Birthday · For Abikẹ",
+  "description": "A sophisticated, interactive 20th birthday celebration dedicated to Romdah (Abikẹ), featuring fine art botanicals, playful inside jokes, and heartfelt wishes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

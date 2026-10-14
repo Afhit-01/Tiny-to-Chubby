@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-royal-purple: #542B83;
+    --color-midnight-plum: #291638;
+    --color-soft-lavender: #E8DDF5;
+    --color-lilac-mist: #F4EFFA;
+    --color-dusty-rose: #D7A1AA;
+    --color-blush-pink: #F2DDE1;
+    --color-champagne: #D8BC86;
+    --color-champagne-light: #F0E3CB;
+    --color-warm-ivory: #FFFAF4;
+    --color-muted-mauve: #806782;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #FFFAF4;
+    background-color: #1a0e23;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    text-wrap: balance;
+  }
+}
+
+/* Subtle, dignified animation system */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSubtle 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSubtle 11s cubic-bezier(0.4, 0, 0.2, 1) 2.5s infinite;
+}
+
+/* Refined typography gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF1D6 0%, #D8BC86 50%, #B69251 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(135deg, #FFFAF4 0%, #E8DDF5 60%, #D7A1AA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hairline borders */
+.border-hairline {
+  border-color: rgba(216, 188, 134, 0.18);
+}
+
+.border-hairline-purple {
+  border-color: rgba(145, 83, 194, 0.22);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #170b20;
+}
+::-webkit-scrollbar-thumb {
+  background: #3e1e66;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #542b83;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
